@@ -14,4 +14,14 @@ describe Object do
 	it 'inherits class methods' do
 		Teacher.ssn_format.should == "###-##-####"
 	end
+
+	describe 'constants' do
+		it 'must be in ALL CAPS' do
+			Person::TITLES.should include('Mr.')
+		end
+
+		it 'does not have to be in a class' do
+			ROLES.should include('Admin')
+		end
+	end
 end
